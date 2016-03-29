@@ -1,0 +1,8 @@
+# Makefile: A standard Makefile for project
+
+all: suffix_tree.c main.c
+	gcc -o suffix_tree suffix_tree.c main.c -I.
+
+clean:
+	rm -f suffix_tree *.o
+
