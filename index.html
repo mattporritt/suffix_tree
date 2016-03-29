@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML><HEAD><TITLE>ANSI C implementation of a Suffix Tree</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META content="Shlomo Yona" name="Author">
+<META content="Shlomo Yona, Suffix Tree, ANSI C, Perl module, data structures, algorithms, string manipulations" name="Keywords">
+<META content="ANSI C implementation of a Suffix Tree" name="description">
+<META content="global" name="distribution">
+<META content="document" name="resource-type">
+<META content="en" name="language">
+<BODY bgColor="white">
+<center>
+<H1><FONT color="black">ANSI C implementation of a Suffix Tree</FONT></H1>
+</center>
+<H2><FONT color="red">What you will find in this page</FONT></H2>
+<ul>
+	<li>You can view and download an ANSI C implementation of a suffix tree.
+	<li>You can view and download a Perl Module that interfaces the ANSI-C implementation of the suffix tree so you can easily use the functionality under Perl as well.
+</ul>
+
+<H2><FONT color="red">The Suffix Tree data structure</FONT></H2>
+<p>
+A suffix tree is a data structure that exposes the internal structure of a string in a deep way, and can be used to solve the exact matching problem in linear time, but its real virtue comes from its use in linear-time solutions to many string problems more complex than exact string matching.
+<p>
+
+<p>
+The following definitions are taken from <a href="index.html#gusfield">[1]</a>, which contains conprehensive overview of the suffix tree data structure:
+<p>
+<em>Definition</em> A suffix tree <i>T</i> for an <i>m</i>-character string <i>S</i> is a rooted directed tree with exactly <i>m</i> leaves numbered <i>1</i> to <i>m</i>. Each internal node, other than the root, has at least two children and each edge is labeled with a nonempty substring of <i>S</i>. No two edges out of a node can have edge-labels beginning with the same character. The key feature of the suffix tree is that for any leaf <i>i</i>, the concatenation of the edge-labels on the path from the root to leaf <i>i</i> exactly spells out the suffix of <i>S</i> that starts at position <i>i</i>. That is, it spells out <i>S</i>[<i>i</i>..<i>m</i>].
+
+<H2><FONT color="red">Authors and maintainers</FONT></H2>
+<p>
+The source code was initially by Dotan Tsadok who worked (on and off) on it from 24.12.2001 untill 21.8.2002 as his undergraduate project in Haifa university.
+<p>
+The current maintainer is <a href="http://cs.haifa.ac.il/~shlomo/">Shlomo Yona</a>.
+<p>
+A Perl interface for this suffix tree data structure is available thanks to <a href="http://okaye.esmartweb.com/">Offer Kaye</a>, with whom I produced the first working version. 
+
+<H2><FONT color="red">TODO</FONT></H2>
+<ul>
+	<li>Put everyting into a CVS repository.
+	<li>Slight rewrites to code and documentation so they look nice.
+	<li>Intensive testing.
+	<li>Support alphabets from very small (e.g. the 'A','C','G','T' alphabet from biology) to very large (e.g. Chinese alphabet). Current version supports alphabets with no more than 255 characters, and is not memory efficient with very small alphabets (which can be more efficiently treated using bitwise operators).
+	<li>Enhance the general robustness and scalability of the implementation.
+	<li>Supply several toy examples for uses of the suffix tree.
+	<li>Supply several real world examples for uses of the suffix tree.
+	<li>Supply interfaces to this code under more languages (e.g. Java, Python).
+</ul>
+
+<H2><FONT color="red">Files</FONT></H2>
+<ul>
+	<li>Project report summary <a href="README">README</a>.
+	<li>The original project report Dotan wrote <a href="project_report.rtf">project_report.rtf</a>.
+	<li>The header file <a href="suffix_tree.h">suffix_tree.h</a>.
+	<li>The implementation file <a href="suffix_tree.c">suffix_tree.c</a>.
+	<li>A simple example of using the code as through the interface <a href="as_is_example.c">as_is_example.c</a>.
+	<li>A main.c for the Makefile: <a href="main.c">main.c</a>.
+	<li>The Makefile <a href="Makefile">Makefile</a>.
+</ul>
+or as one tarball: <a href="suffix_tree.tar.gz">suffix_tree.tar.gz</a>
+
+<H2><FONT color="red">Compilation</FONT></H2>
+<p>
+Under Linux one would probably do something like this:
+<pre><code>make Makefile</code></pre>
+
+<H2><FONT color="red">License</FONT></H2>
+<p>
+There is absolutely no warranty what so ever. You can freely use and distribute this code as long as you keep credit to previous authors.
+
+<H2><FONT color="red">References</FONT></H2>
+<ol>
+	<li><a name="gusfield"></a>
+Algorithms on Strings, Trees, and Sequences: Computer Science and Computational Biology
+by Dan Gusfield.
+Hardcover - 534 pages 1st edition (January 15, 1997).
+Cambridge Univ Pr (Short);  ISBN: 0521585198.
+</ol>
+
+<hr>
+<em>Shlomo Yona</em>
+<hr>
+<p> <a href="http://validator.w3.org/check/referer"><img border="0" src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01!" height="31" width="88"></a> </p> 
+
+
+</BODY></HTML>
